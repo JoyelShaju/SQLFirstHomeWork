@@ -1,0 +1,9 @@
+1.1	 SELECT CustomerID, CompanyName, Address, City, Region, PostalCode FROM Customers WHERE city = 'london' or city ='paris'
+1.2	 SELECT * FROM Products WHERE QuantityPerUnit LIKE '%bottles'
+1.3	 SELECT Products.*, Suppliers.CompanyName, Suppliers.Country FROM Products LEFT JOIN Suppliers ON Products.SupplierID=Suppliers.SupplierID WHERE QuantityPerUnit LIKE '%bottles';
+1.4	 SELECT count(Categories.CategoryID) 'Count', Categories.CategoryName FROM Categories LEFT JOIN  Products ON Products.CategoryID=Categories.CategoryID GROUP BY CategoryName ORDER BY Count DESC;
+1.5	 SELECT TitleOfCourtesy + ' ' + FirstName + ' ' + LastName FROM Employees WHERE Country = 'UK'
+1.6	
+1.7	SELECT COUNT(Freight) AS Freight_greater_100  FROM orders WHERE Freight > 100 AND (ShipCountry = 'USA' OR ShipCountry = 'UK')
+1.8	SELECT TOP 1 [Order Details].OrderID, ROUND(sum(Unitprice*Quantity),2) AS TotalPrice, ROUND(sum((UnitPrice*Quantity)*Discount),2) AS Deducted FROM [Order Details] GROUP BY OrderID ORDER BY Deducted DESC;
+
