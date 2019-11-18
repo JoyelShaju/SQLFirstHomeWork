@@ -1,0 +1,24 @@
+CREATE DATABASE SHOPPINGONLINE;
+
+CREATE TABLE Customers
+(
+Customer_id int,
+First_name nvarchar (40),
+Last_name nvarchar (40),
+City nvarchar (40),
+Country nvarchar (40),
+Phone nvarchar (40)
+PRIMARY KEY (Customer_id)
+)
+
+CREATE TABLE Orders
+(
+Order_id int,
+Order_date datetime,
+Order_number nvarchar (10),
+Customer_id int,
+Total_amount decimal (12,2),
+PRIMARY KEY (Order_id),
+FOREIGN KEY (Customer_id) REFERENCES Customers(Customer_id)
+)
+
